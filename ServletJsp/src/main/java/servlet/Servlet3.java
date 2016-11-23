@@ -14,11 +14,11 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class Servlet3
  */
 public class Servlet3 extends HttpServlet {
-	List<User> listAllUsers = new ArrayList<User>();
+	List<User> listAllPaises = new ArrayList<User>();
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		listAllUsers = Servicios.listar();
-		req.setAttribute("listAllUsers", listAllUsers);
+		listAllPaises = Servicios.listar();
+		req.setAttribute("listAllPaises", listAllPaises);
 		redirect(req,resp);
 		super.doPost(req, resp);
 	}

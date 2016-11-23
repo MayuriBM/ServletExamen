@@ -13,11 +13,11 @@ import java.util.List;
 
 public class Servicios {
 	static File archivo = Paths.get(".").toAbsolutePath().normalize().toFile();
-	static String ruta = archivo.toString() + "/src/main/resources/";
+	static String ruta = "./src/main/resources/";
 
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "org.h2.Driver"; //org.h2.Driver
-    static final String DB_URL = "jdbc:h2:" + ruta + "DBtest";
+    static final String DB_URL = "jdbc:h2:file:" + ruta + "DBtest2";
 
     //  Database credentials
     static final String USER = "sa";
@@ -27,7 +27,7 @@ public class Servicios {
     	
     }
     
-    public static void BorrarTabla(String user){
+    public static void BorrarTabla(String nombre){
     	Connection conn = null;
         Statement stmt = null;
 
@@ -44,7 +44,7 @@ public class Servicios {
             System.out.println("Creating table in given database...");
             stmt = conn.createStatement();
 
-            String sql = "DELETE FROM Alumnos WHERE first = '" + user + "'";
+            String sql = "DELETE FROM Paises WHERE first = '" + nombre + "'";
                    ;
 
             stmt.executeUpdate(sql);
@@ -100,13 +100,13 @@ public class Servicios {
             System.out.println("Creating table in given database...");
              stmt = conn.createStatement();
     		
-    			prepareStatement = conn.prepareStatement("SELECT * FROM Alumnos");
+    			prepareStatement = conn.prepareStatement("SELECT * FROM Paises");
     			resultSet = prepareStatement.executeQuery();
     			while(resultSet.next()){
     				User userInDatabase = new User();
     				userInDatabase.setNombre(resultSet.getString(1));
-    				userInDatabase.setCourse(resultSet.getString(2));
-    				userInDatabase.setAge(resultSet.getString(3));
+    				userInDatabase.setidioma(resultSet.getString(2));
+    				userInDatabase.setidioma2(resultSet.getString(3));
     				
     				listUsers.add(userInDatabase);
     			}
@@ -134,7 +134,7 @@ public class Servicios {
 		}
 	}
     
-   public static void insertarTabla(String user, String result, String curso){
+   public static void insertarTabla(String nombre, String idioma, String idioma2){
     	Connection conn = null;
         Statement stmt = null;
 
@@ -151,7 +151,7 @@ public class Servicios {
             System.out.println("Creating table in given database...");
             stmt = conn.createStatement();
 
-            String sql = "REPLACE INTO Alumnos (first,age,course) VALUES ('" + user + "', '" + result + "', '" + curso + "')";
+            String sql = "REPLACE INTO Paises (nombre,idioma,idioma2) VALUES ('" + nombre + "', '" + idioma + "', '" + idioma2 + "')";
             
             ;
                    
@@ -186,10 +186,10 @@ public class Servicios {
            System.out.println("Creating table in given database...");
            stmt = conn.createStatement();
 
-           String sql = "CREATE TABLE IF NOT EXISTS Alumnos " +
-                   " (first VARCHAR(255), " +
-                   " age VARCHAR(255), " +
-                   " course VARCHAR(255), PRIMARY KEY (first))";
+           String sql = "CREATE TABLE IF NOT EXISTS Paises " +
+                   " (nombre VARCHAR(255), " +
+                   " idioma VARCHAR(255), " +
+                   " idioma2 VARCHAR(255), PRIMARY KEY (nombre))";
 
            stmt.executeUpdate(sql);
            System.out.println("Created table in given database...");

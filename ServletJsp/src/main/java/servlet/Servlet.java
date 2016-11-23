@@ -18,25 +18,19 @@ public class Servlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Date fecha2=null;
-		String user = req.getParameter("user");
-		String fecha = req.getParameter("edad");
-		String curso = req.getParameter("curso");
-		try {
-		fecha2 = new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		String nombre = req.getParameter("nombre");
+		String idioma = req.getParameter("Idioma");
+		String idioma2 = req.getParameter("Idioma2");
+		
 		//System.out.println(user);
-		req.setAttribute("nom",user);
-		req.setAttribute("ed",CalculaEdad.getEdad(fecha2));
-		//req.setAttribute("ed",fecha);
-		req.setAttribute("cur",curso);
+		req.setAttribute("nom",nombre);
+		req.setAttribute("i", idioma);
+		req.setAttribute("i2",idioma2);
 
 		Servicios.crearTabla();
-		Servicios.insertarTabla(user, CalculaEdad.getEdad(fecha2), curso);
-		fecha2 = null;
+		Servicios.insertarTabla(nombre,idioma, idioma2);
+		
 
 		req.getRequestDispatcher("fin.jsp").forward(req, resp);
 		//redirect(resp);

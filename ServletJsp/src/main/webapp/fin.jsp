@@ -7,16 +7,18 @@
 <title>Fin</title>
 </head>
 <body>
-	<h1>Bienvenido: ${nom}</h1>
+	<h1>Tu pais es: ${nom}</h1>
 	<br>
-	<h1> ${ed}</h1>
+	<h1>Hablas: ${idioma}</h1>
 	<br>
-	<h1> Tu curso es: ${cur} de grado superior</h1>
+	<h1></h1>
 	<br>
 	<input type="button" onclick="window.location.href='datos.jsp'"  value="Volver">
 	<br>
 	<form method="post" action="Hola">
-		<input type="hidden" value="${nom}" name="user">
+		<input type="hidden" value="${nom}" name="nombre">
+		<br>
+		<input type="hidden" value="${i}" name="idioma">
 		<br>
 		<input type="submit"  value="Borrar">
 	</form>	

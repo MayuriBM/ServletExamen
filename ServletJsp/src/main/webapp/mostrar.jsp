@@ -23,8 +23,8 @@
 		<thead>
 			<tr>
 				<td>Nombre</td>
-				<td>Curso</td>
-				<td>Edad</td>
+				<td>Idioma</td>
+				<td>Idioma2</td>
 				<td>Borrar</td>
 			</tr>
 		</thead>
@@ -32,8 +32,8 @@
 			<c:forEach var="user1" items="${listAllUsers}">
 				<tr>
 					<td><c:out value="${user1.nombre}"/> </td>
-					<td><c:out value="${user1.age}"/> </td>
-					<td><c:out value="${user1.course}"/> </td>
+					<td><c:out value="${user1.idioma}"/> </td>
+					<td><c:out value="${user1.idioma2}"/> </td>
 					<td><a name="user" href="Hola?user=${user1.nombre}">Borrar</a></td>
 		    	</tr>
 			</c:forEach>

@@ -7,35 +7,20 @@
 <title>Datos</title>
 </head>
 <body>
-<form method="post" action="hello">
-	<table width="40%" align="center">
-		<tr>
-			<td colspan="2" align="center"><h2>Escriba su nombre</h2><hr></td>
-		</tr>
-		<tr>
-			<td><p>Nombre:</p></td>
-			<td><input type="text" id="user" name="user" size="30"></td>
-		</tr>
-		<tr>
-			<td><p>Fecha Nacimiento:</p></td>
-			<td><input type="date" id="edad" name="edad" size="30"></td>
-		</tr>
-		<tr>
-			<td><p>Curso:</p></td>
-			<td>
-				<select name="curso">
-					<option value="Primero">Primero</option>
-					<option value="Segundo">Segundo</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="right"><input type="submit" value="Enviar"></td>
-		</tr>
-		<tr>
-			<td colspan="2" align="left"><input type="button" onclick="window.location.href='mostrar.jsp'"  value="Mostrar Usuarios"></td>
-		</tr>
-	</table>
-</form>
+	<form method="post" action="welcome">
+		<span>País: </span>
+		<input type="text" name="pais">
+		</br>
+		<span>Idioma</span>
+		<select name="idioma"></select>
+		</br>
+		<input type="submit">
+	</form>
+	<form action="insert" method="post">
+		<span>Idioma:</span>
+		<input type="text" name="idioma"> <br/>
+		<input type="submit" name="Insertar Idioma">
+	</form>
+	
 </body>
 </html>

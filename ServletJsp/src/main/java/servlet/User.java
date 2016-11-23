@@ -2,8 +2,8 @@ package servlet;
 
 public class User {
 	private String nombre;
-	private String age;
-	private String course;
+	private String idioma;
+	private String idioma2;
 	
 	public String getNombre() {
 		return nombre;
@@ -11,17 +11,17 @@ public class User {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getAge() {
-		return age;
+	public String getidioma() {
+		return idioma;
 	}
-	public void setAge(String age) {
-		this.age = age;
+	public void setidioma(String idioma) {
+		this.idioma = idioma;
 	}
-	public String getCourse() {
-		return course;
+	public String getidioma2() {
+		return idioma2;
 	}
-	public void setCourse(String course) {
-		this.course = course;
+	public void setidioma2(String idioma2) {
+		this.idioma2 = idioma2;
 	}
 
 }
