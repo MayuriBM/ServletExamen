@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import es.salesianos.model.Paises;
 import es.salesianos.model.assembler.PaisesAssembler;
+import es.salesianos.repository.Repository;
 
 public class Service {
 
@@ -11,6 +12,24 @@ public class Service {
 	public Paises assemblePaisesFromRequest(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		return PaisesAssembler.assemblePaisesFrom(req);
+	}
+	public Paises SearchPais(Paises pais) {
+		return repository.search(pais);
+	}
+	
+	
+	public void insert(Paises paisFormulario) {
+		// TODO Auto-generated method stub
+		Repository repository = new Repository();
+		/*Paises paisInDatabase = repository.search(paisFormulario);
+		
+		if(null == paisInDatabase){*/
+			repository.insert(paisFormulario);
+		/*}else{
+			repository.update(paisFormulario);
+		}*/
+		
+		
 	}
 
 	

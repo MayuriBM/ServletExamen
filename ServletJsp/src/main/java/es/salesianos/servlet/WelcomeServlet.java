@@ -18,7 +18,8 @@ public class WelcomeServlet extends HttpServlet{
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Paises pais = service.assemblePaisesFromRequest(req);
-	
+		service.insert(pais);
+		
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {

@@ -1,5 +1,20 @@
 package es.salesianos.model;
 
 public class Paises {
-//prueba para ver si se sube a git
+
+	private String pais;
+	private String Idioma;
+	
+	public String getPais() {
+		return pais;
+	}
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+	public String getIdioma() {
+		return Idioma;
+	}
+	public void setIdioma(String idioma) {
+		Idioma = idioma;
+	}
 }
