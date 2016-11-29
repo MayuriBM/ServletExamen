@@ -8,6 +8,7 @@ import es.salesianos.repository.Repository;
 
 public class Service {
 
+	private Repository repository = new Repository();
 
 	public Paises assemblePaisesFromRequest(HttpServletRequest req) {
 		// TODO Auto-generated method stub
@@ -30,6 +31,15 @@ public class Service {
 		}*/
 		
 		
+	}
+	
+	public void delete(Paises paisFormulario) {
+		Paises paisInDatabase = repository.search(paisFormulario);
+		if(null == paisInDatabase){
+			insert(paisFormulario);
+		}else{
+			repository.delete(paisFormulario.getPais());
+		}
 	}
 
 	
